@@ -4,7 +4,7 @@ window.onload = function(){
 	let train = document.querySelector("#train");
 	let weels = document.querySelectorAll(".weel");
 	let grass = document.querySelector("#grass");
-	let btn_fright = document.querySelector("#btn_fright");
+	let btn_horn = document.querySelector("#btn_horn");
 	let light = document.querySelector("#light");
 	let light_window = document.querySelector("#light_window");
 	let horn = document.querySelector("#horn");
@@ -18,6 +18,8 @@ window.onload = function(){
 	let bird_speed;
 	let bird_fright;
 	let move = setInterval(moveTrain, 20, v);
+
+	
 
 	function moveTrain(){
 		document.onkeydown = document.onkeyup = (e) => {
@@ -76,8 +78,8 @@ window.onload = function(){
 				bird_fright = false;
 			}
 			if(bird.offsetLeft > 300 && bird.offsetLeft < 500){
-				btn_fright.style.background = "red";
-			}else{btn_fright.style.background = "white";}
+				btn_horn.style.background = "red";
+			}else{btn_horn.style.background = "white";}
 			bird_pos = bird_speed - speed;
 			//Remove bird
 			if(bird.offsetLeft < - 1000 || bird.offsetLeft > 3000){
