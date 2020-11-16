@@ -13,7 +13,7 @@ window.onload = function(){
 	
 	let v = 0;
 	let speed = 0;
-	const max_speed = 10;
+	const max_speed = 11;
 	let left_pos = 0;
 	let intSmoke;
 	let bird_pos;
@@ -90,7 +90,8 @@ window.onload = function(){
 				bird.style.left = bird.offsetLeft + bird_pos + "px";
 			}
 		}
-	}//moveTrain
+	}//moveTrain.
+
 	function letSmoke(s = 1){
 		let smoke = document.createElement("span");
 		smoke.classList.add("smoke");
@@ -98,6 +99,7 @@ window.onload = function(){
 		smoke.animate([{left: 80 + "px"},{left: 80 + "px"},{left: (80 + s * 10) + "px"},{left: (90 + s * 20) + "px"}],3000);
 		setTimeout(() =>{smoke.remove()},3000);
 	}//letSmoke
+
 	//Interval append bird
 	setInterval((e) =>{
 		if(!document.getElementById('bird')){
@@ -115,8 +117,10 @@ window.onload = function(){
 			page.append(bird);
 		}
 	},10000);
+	
 	//Sound train
 	setTimeout(soundTrain, 1000);
+	//setTimeout(soundTrain, 3000);
 	function soundTrain(){
 		if(speed > 0){
 			//Sound train
@@ -125,6 +129,7 @@ window.onload = function(){
 			train.src = 'sound/train.mp3';
 			train.play();
 		}
+
 		setTimeout(soundTrain, 3000/speed);
 	}//soundTrain
 }
