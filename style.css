@@ -27,8 +27,9 @@ transition: 1s;left:0;}
 #bird{background: url(img/bird1.gif); background-size:contain;width: 100px; height: 100px;position: absolute;}
 #grass{background: url(img/grass.png);position: absolute;height: 250px; width:100%;bottom: 0;}
 #controls{height: 60px;background: rgba(255,255,255,0.2);position: relative;bottom: 0;padding: 15px}
-#controls .btn{padding:0 5px;min-width: 50px;min-width: 50px;height: 50px; display: inline-block;background: white;text-align: center;line-height: 50px;border-radius: 5px;border: 3px solid #eee;}
+#controls .btn{cursor: pointer;padding:0 5px;min-width: 50px;min-width: 50px;height: 50px; display: inline-block;background: white;text-align: center;line-height: 50px;border-radius: 5px;border: 3px solid #eee;}
 #controls .btn:nth-child(3){width: 150px}
+#controls .btn:hover{background: #eee;}
 #light{display:none;width: 200px;height: 300px;position: absolute; background: linear-gradient(-40deg, #fef04863 20%, transparent 63%); transform: rotate(-58deg); left: -226px; top: -90px; filter: blur(4px);}
 #light_window{width: 28px; height: 28px; position: absolute;left: 264px;top: 63px;background: #ffff009c;filter: blur(3px);display: none;}
 #horn{display:none;border: 10px solid transparent; border-top: 30px solid #49484896; width: 0px; position: absolute; filter: blur(4px); left: 233px; top: 10px;}

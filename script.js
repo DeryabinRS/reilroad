@@ -5,6 +5,8 @@ window.onload = function(){
 	let weels = document.querySelectorAll(".weel");
 	let grass = document.querySelector("#grass");
 	let btn_horn = document.querySelector("#btn_horn");
+	let btn_left = document.querySelector("#btn_left");
+	let btn_right = document.querySelector("#btn_right");
 	let light = document.querySelector("#light");
 	let light_window = document.querySelector("#light_window");
 	let horn = document.querySelector("#horn");
@@ -19,27 +21,27 @@ window.onload = function(){
 	let bird_fright;
 	let move = setInterval(moveTrain, 20, v);
 
-	
+
 
 	function moveTrain(){
-		document.onkeydown = document.onkeyup = (e) => {
-			console.log(e);
+		document.onkeydown = document.onkeyup = document.onclick = (e) => {
+			console.log(e.target.id);
 			//Stright
-			if(e.keyCode == 39 && e.type == "keyup"){
-				if(speed) clearInterval(intSmoke);
-				intSmoke = setInterval(letSmoke,2000 - (speed * 100),speed);
+			if(e.keyCode == 39 && e.type == "keyup" || e.target.id == "btn_right"){
 				speed++;
+				clearInterval(intSmoke);
+				intSmoke = setInterval(letSmoke,2000 - (speed * 100),speed);
 				if(speed > max_speed){speed = max_speed;}else{left_pos = left_pos + 5;}
 			}
 			//Back
-			if(e.keyCode == 37 && e.type == "keyup"){
-				clearInterval(intSmoke);
+			if(e.keyCode == 37 && e.type == "keyup" || e.target.id == "btn_left"){
 				speed--;
+				clearInterval(intSmoke);
 				if(speed) intSmoke = setInterval(letSmoke,2000 - (speed * 100),speed);
 				if(speed < 0){speed = 0;}else{left_pos = left_pos - 5;}
 			}
 			//Horn
-			if(e.keyCode == 32 && e.type == "keyup"){
+			if(e.keyCode == 32 && e.type == "keyup" || e.target.id == "btn_horn"){
 				//Sound horn
 				var horn_sound = new Audio();	horn_sound.preload = 'auto'; horn_sound.src = 'sound/horn.mp3';
 				horn_sound.play();
@@ -54,7 +56,7 @@ window.onload = function(){
 				}
 			}
 			//light
-			if(e.keyCode == 17 && e.type == "keyup"){
+			if(e.keyCode == 17 && e.type == "keyup" || e.target.id == "btn_light"){
 				if(light.style.display === 'none'){
 					light.style.display = 'block';
 					light_window.style.display = 'block';
