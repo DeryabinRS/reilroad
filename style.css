@@ -1,0 +1,34 @@
+body{margin: 0;height: 0;background: #2290cd;}
+#page{
+	background:url(img/fon1_0.png) repeat-x bottom, url(img/fon1_1.png) repeat-x bottom, url(img/fon1_2.png) repeat-x bottom, url(img/fon1_3.png) repeat-x bottom, url(img/fon1_4.png) repeat-x bottom, url(img/fon1_5.png) repeat-x bottom;
+	width: 100%;background-size: inherit; height: 512px;position: absolute;bottom: 0;overflow: hidden;}
+#train{
+background: url(img/train_min.png) no-repeat;background-size: contain;width: 600px;height: 187px;transform: scale(-1, 1);position: absolute;bottom: 35px;
+transition: 1s;left:0;}
+#train .weel{width: 60px;height: 60px;position: absolute;background: url(img/weel_min.png) no-repeat;bottom: 0;transition: 0.1s;}	
+#train .weel:nth-child(1){left: 170px;}
+#train .weel:nth-child(2){left: 255px;}
+#train .smoke{
+	position: absolute;pointer-events: none;
+	background: #ccc;border-radius: 50%;
+	animation: animateSmoke 3s linear infinite;
+	width: 30px;height: 30px;top:-15px;left: 75px;z-index: 0;
+	box-shadow: 0 0 10px 5px #ccc;
+}
+#train .smoke::after, #train .smoke::before{content: "";position: absolute;width: 25px; height: 25px;box-shadow: 0 0 10px 5px #ccc;border-radius: 50%;background: #ccc;}
+#train .smoke::after{left:20px;}
+#train .smoke::before{left:-15px;}
+@keyframes animateSmoke{
+0%{transform: scale(0) translateY(0);opacity: 0;}
+10%{opacity: 0.7;}
+90%{opacity: 0.7;}
+100%{transform: scale(1.5) translateY(-500%);opacity: 0;}
+}
+#bird{background: url(img/bird1.gif); background-size:contain;width: 100px; height: 100px;position: absolute;}
+#grass{background: url(img/grass.png);position: absolute;height: 250px; width:100%;bottom: 0;}
+#controls{height: 60px;background: rgba(255,255,255,0.2);position: relative;bottom: 0;padding: 15px}
+#controls .btn{padding:0 5px;min-width: 50px;min-width: 50px;height: 50px; display: inline-block;background: white;text-align: center;line-height: 50px;border-radius: 5px;border: 3px solid #eee;}
+#controls .btn:nth-child(3){width: 150px}
+#light{display:none;width: 200px;height: 300px;position: absolute; background: linear-gradient(-40deg, #fef04863 20%, transparent 63%); transform: rotate(-58deg); left: -226px; top: -90px; filter: blur(4px);}
+#light_window{width: 28px; height: 28px; position: absolute;left: 264px;top: 63px;background: #ffff009c;filter: blur(3px);display: none;}
+#horn{display:none;border: 10px solid transparent; border-top: 30px solid #49484896; width: 0px; position: absolute; filter: blur(4px); left: 233px; top: 10px;}
